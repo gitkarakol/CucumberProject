@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class JuridicEntityFunctionality {
+public class JuridicEntityPage {
     public WebDriver driver;
-    public JuridicEntityFunctionality(WebDriver driver){
+    public JuridicEntityPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
