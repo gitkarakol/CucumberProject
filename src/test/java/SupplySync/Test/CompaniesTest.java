@@ -1,0 +1,52 @@
+package SupplySync.Test;
+
+import SupplySync.Pages.CompaniesPage;
+import SupplySync.Pages.LoginPage;
+import utilities.Config;
+import utilities.Driver;
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.*;
+
+public class CompaniesTest {
+
+    WebDriver driver = Driver.getDriver();
+    LoginPage loginPage = new LoginPage(driver);
+    CompaniesPage companiesPage = new CompaniesPage(driver);
+
+
+    @Test
+    public void testAddNewCompany() {
+
+        driver.get(Config.getValue("url"));
+
+
+        loginPage.email.sendKeys(Config.getValue("email"));
+        loginPage.password.sendKeys(Config.getValue("password"));
+        loginPage.submit.click();
+
+
+        companiesPage.clickEditButton();
+        companiesPage.clickElementWithJS(companiesPage.editButton);
+        companiesPage.selectMenuOption();
+        companiesPage.clickEdit();
+
+
+
+        companiesPage.fillCompanyDetails("Dasha's Company", "dashuha1405@gmail.com", "111 Wall Street", "1234567890");
+
+
+        companiesPage.saveChanges();
+
+
+        String confirmationMessage = companiesPage.getConfirmationMessage();
+        Assert.assertEquals("Company successfully changed", confirmationMessage);
+    }
+
+    public void clearWebField(WebElement element) {
+        while (!element.getAttribute("value").equals("")) {
+            element.sendKeys(Keys.BACK_SPACE);
+        }
+    }
+
+    }
