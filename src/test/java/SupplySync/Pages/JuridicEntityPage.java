@@ -35,9 +35,4 @@ public class JuridicEntityPage {
     @FindBy(xpath = "//div[@class='sc-jnrVZQ ieeBTg']/button[text()='Create']")
     public WebElement createButton ;
 
-
-
-
-
-
 }
