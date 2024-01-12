@@ -37,7 +37,6 @@ public class TariffsTest {
         loginPage.email.sendKeys(Config.getValue("email"));
         loginPage.password.sendKeys(Config.getValue("password"));
         loginPage.submit.click();
-        System.out.println("Successful log in");
     }
 
     @Test
