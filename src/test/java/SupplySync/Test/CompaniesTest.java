@@ -27,9 +27,10 @@ public class CompaniesTest {
 
 
         companiesPage.clickEditButton();
+                
         companiesPage.clickElementWithJS(companiesPage.editButton);
         companiesPage.selectMenuOption();
-        companiesPage.clickEdit();
+        companiesPage.clickEdit.click();
 
 
 
@@ -43,7 +44,7 @@ public class CompaniesTest {
         Assert.assertEquals("Company successfully changed", confirmationMessage);
     }
 
-    public void clearWebField(WebElement element) {
+    public static void clearWebField(WebElement element) {
         while (!element.getAttribute("value").equals("")) {
             element.sendKeys(Keys.BACK_SPACE);
         }

@@ -1,5 +1,6 @@
 package SupplySync.Pages;
 
+import SupplySync.Test.CompaniesTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +22,7 @@ public class CompaniesPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[1]/div/div/div[2]/div[2]/div[3]/div/button")
     public WebElement menuOption;
 
-    @FindBy(xpath = "//*[@id=\"long-menu\"]/div[3]/ul/li/span")
+    @FindBy(xpath = "//*[@id=\"long-menu\"]/div[3]/ul/li")
     public WebElement clickEdit;
 
     @FindBy(name = "name")
@@ -55,16 +56,16 @@ public class CompaniesPage {
 
 
     public void fillCompanyDetails(String name, String email, String address, String phone) {
-        nameField.clear();
+        CompaniesTest.clearWebField(nameField);
         nameField.sendKeys(name);
 
-        emailField.clear();
+        CompaniesTest.clearWebField(emailField);
         emailField.sendKeys(email);
 
-        addressField.clear();
+        CompaniesTest.clearWebField(addressField);
         addressField.sendKeys(address);
 
-        phoneField.clear();
+        CompaniesTest.clearWebField(phoneField);
         phoneField.sendKeys(phone);
     }
 
