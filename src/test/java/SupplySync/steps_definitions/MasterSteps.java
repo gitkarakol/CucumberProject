@@ -1,6 +1,6 @@
 package SupplySync.steps_definitions;
 
-import SupplySync.Pages.MasterPage;
+import SupplySync.pages.MasterPage;
 import org.openqa.selenium.WebDriver;
 import utilities.Driver;
 

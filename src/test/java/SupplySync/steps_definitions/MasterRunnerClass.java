@@ -7,15 +7,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html:target/cucumberReport.html","json:target/report.json"},
         features = "src/test/resources/features",
-        glue = "step_definitions",
-        tags = "@printUrlTitle",
-        dryRun = true
+        plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json"}
+,
+        glue = "SupplySync.steps",
+        tags = "@creationOfMasterProfile or @EditMaster",
+        dryRun = false
 )
 
 
 public class MasterRunnerClass {
-
 
 }
