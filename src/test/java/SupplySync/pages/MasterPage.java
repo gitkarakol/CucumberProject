@@ -1,4 +1,4 @@
-package SupplySync.Pages;
+package SupplySync.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

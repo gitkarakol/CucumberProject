@@ -11,5 +11,5 @@ import org.junit.runner.RunWith;
         tags = "@CreateTariff or @EditTariff or @DeleteTariff",
         plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json"}
 )
-public class CucumberRunner {
+public class TariffTestRunner {
 }

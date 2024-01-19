@@ -1,6 +1,6 @@
-Feature:
+Feature: Tariff Tests
 
-  @TariffTest
+  @CreateTariff
   Scenario: Create tariff
     Given user logs in to the website
     Then user goes to tariff tab
@@ -9,6 +9,12 @@ Feature:
     And user fills all fields
     When user clicks on save tariff button
     Then verify tariff appeared
+
+  @EditTariff
+    Scenario: Edit tariff
     Then user edit tariff
+
+  @DeleteTariff
+  Scenario: Delete tariff
     Then user delete tariff
     And log out
