@@ -25,4 +25,14 @@ public class UtilWait {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+//    public static boolean waitUntilElementIsNotVisible(WebDriver driver, int seconds, WebElement element){
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+//        return wait.until(ExpectedConditions.invisibilityOf(element));
+//    }
+    public static WebElement waitUntilElementIsNotVisible(WebDriver driver, int seconds, WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+        return element;
+    }
 }

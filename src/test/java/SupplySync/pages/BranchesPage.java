@@ -1,9 +1,11 @@
-package SupplySync.Pages;
+package SupplySync.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import java.util.List;
 
 public class BranchesPage {
     WebDriver driver;
@@ -45,11 +47,11 @@ public class BranchesPage {
     @FindBy(xpath = "(//li[@data-value='[object Object]'])[7]")
     public WebElement clickOnCity; //esc button
 
-    @FindBy(id = "mui-component-select-companyId")
+    @FindBy(id = "mui-component-select-company")
     public WebElement selectCompanies;
 
-    @FindBy(xpath = "//li[text()='RunolfssonCodewise123']")
-    public WebElement clickOnCompanies;
+    @FindAll(@FindBy( xpath = "//li[text()='RunolfssonCodewise123']/.."))
+    public List<WebElement> clickOnCompanies;
 
     @FindBy(xpath = "//input[@name='shownToClients' and  @value='true']")
     public WebElement showBranchToCustomers;

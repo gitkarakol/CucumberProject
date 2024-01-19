@@ -1,7 +1,8 @@
-package SupplySync.Test;
+package SupplySync.test;
 
-import SupplySync.Pages.LoginPage;
-import org.junit.jupiter.api.*;
+import SupplySync.pages.LoginPage;
+
+import org.junit.*;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import utilities.Config;
@@ -11,11 +12,11 @@ public class LoginFuncTest {
     static WebDriver driver = Driver.getDriver();
     static LoginPage loginPage = new LoginPage(driver);
 
-    @BeforeAll
+    @BeforeClass
     public static void beforeAll(){
         driver.get(Config.getValue("url"));
     }
-    @BeforeEach
+    @Before
     public void refresh(){
         driver.navigate().refresh();
     }
@@ -52,7 +53,7 @@ public class LoginFuncTest {
         if(loginPage.incorrectCredentialsErrorMessage.isDisplayed()) System.out.println("Negative scenario 3: pass");
     }
 
-    @AfterAll
+    @AfterClass
     public static void afterAll(){
         //Driver.closeDriver();
     }

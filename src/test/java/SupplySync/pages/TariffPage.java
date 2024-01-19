@@ -1,4 +1,4 @@
-package SupplySync.Pages;
+package SupplySync.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,7 +33,7 @@ public class TariffPage {
     @FindBy(xpath = "//label[text()='Choose a branch']/following-sibling::div")
     public WebElement chooseBranch;
 
-    @FindBy(xpath = "//div/ul/li[child::text()='CodeWise']")
+    @FindBy(xpath = "//div/ul/li[child::text()='Branch']")
     public WebElement branch;
 
     @FindBy(xpath = "//label[.='Write the name of the tariff']/following-sibling::div/input")
@@ -75,6 +75,12 @@ public class TariffPage {
     @FindBy (xpath = "//button[text()='Save']")
     public WebElement save;
 
+    @FindBy(xpath = "//*[.='Delete']")
+    public WebElement delete;
+
+    @FindBy(xpath = "//button[.='Delete']")
+    public WebElement confirmDelete;
+
     @FindBy(xpath = "//p[text()='Administrator']/../../../..")
     public WebElement adminPanel;
 
@@ -83,5 +89,8 @@ public class TariffPage {
 
     @FindBy(xpath = "//button[text()='Exit']")
     public WebElement exitBtn;
+
+    @FindBy(linkText = ("Something went wrong Request failed with status code 500"))
+    public WebElement errorMessages;
 
 }

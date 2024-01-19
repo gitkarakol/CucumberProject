@@ -1,25 +1,16 @@
-package SupplySync.Test;
+package SupplySync.test;
 
-import SupplySync.Pages.LoginPage;
-import SupplySync.Pages.TariffPage;
-import dev.failsafe.internal.util.Assert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import SupplySync.pages.LoginPage;
+import SupplySync.pages.TariffPage;
+
+import org.junit.*;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Config;
 import utilities.Driver;
 import utilities.UtilWait;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +21,7 @@ public class TariffsTest {
     static LoginPage loginPage = new LoginPage(driver);
     static TariffPage tariffPage = new TariffPage(driver);
 
-    @BeforeAll
+    @BeforeClass
     public static void before(){
 
         driver.get(Config.getValue("url"));
@@ -63,6 +54,7 @@ public class TariffsTest {
 
         //create tariff
         tariffPage.createTariff.click();
+
         tariffPage.chooseBranch.click();
         tariffPage.branch.click();
         tariffPage.chooseTariffName.sendKeys("Test tariff name");
@@ -72,6 +64,7 @@ public class TariffsTest {
         tariffPage.cost.sendKeys("150");
         tariffPage.address.sendKeys("1632 W Washington St, Chicago, IL, 62363");
         tariffPage.comments.sendKeys("No comments =)");
+
         tariffPage.create.click();
 
         //edit tariff
@@ -103,6 +96,7 @@ public class TariffsTest {
         tariffPage.comments.sendKeys("Comments!!");
 
         tariffPage.save.click();
+
         UtilWait.waitUntilElementIsClickable(driver, 10, tariffPage.adminPanel);
         Thread.sleep(3000);
         tariffPage.adminPanel.click();
@@ -118,7 +112,7 @@ public class TariffsTest {
         }
     }
 
-    @AfterAll
+    @AfterClass
     public static void after(){
         Driver.closeDriver();
     }
