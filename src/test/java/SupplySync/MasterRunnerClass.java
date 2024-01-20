@@ -1,4 +1,4 @@
-package SupplySync.steps_definitions;
+package SupplySync;
 
 
 import io.cucumber.junit.Cucumber;
@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "step_definitions",
         tags = "@printUrlTitle",
-        dryRun = true
+        dryRun = false
 )
 
 
