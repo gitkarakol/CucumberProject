@@ -1,4 +1,4 @@
-Feature: Manage Companies Functionality
+Feature: Company Edit functional
 
   @CompanyEdit
   Scenario: Edit a company with valid data

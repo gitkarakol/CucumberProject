@@ -7,11 +7,11 @@ import org.junit.runner.RunWith;
     @CucumberOptions(
             plugin = {"html:target/cucumberReport.html","json:target/report.json"},
             features = "src/test/resources/features",
-            glue = "step_definitions",
+            glue = "SupplySync.steps",
             tags = "@CompanyEdit or @CompanyEditNegative",
             dryRun = false
     )
 
 
-    public class CompanyRunner {
+    public class companyRunner {
 }
