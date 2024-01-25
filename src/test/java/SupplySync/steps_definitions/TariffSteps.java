@@ -1,4 +1,4 @@
-package SupplySync.steps;
+package SupplySync.steps_definitions;
 
 import SupplySync.pages.*;
 import io.cucumber.java.en.Given;
