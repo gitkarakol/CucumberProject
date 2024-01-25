@@ -17,8 +17,6 @@ public class TariffSteps {
     WebDriver driver = Driver.getDriver();
     LoginPage loginPage = new LoginPage(driver);
     TariffPage tariffPage = new TariffPage(driver);
-    BranchesPage branchesPage = new BranchesPage(driver);
-
 
     @Given("user logs in to the website")
     public void user_logs_in_to_the_website() {
@@ -31,16 +29,7 @@ public class TariffSteps {
 
     @Then("user goes to tariff tab")
     public void user_goes_to_tariff_tab(){
-
-        while(true){
-            branchesPage.branchesButton.click();
-            UtilWait.waitUntilElementIsClickable(driver, 3, branchesPage.selectCompanies).click();
-            UtilWait.waitUntilElementIsClickable(driver, 3, branchesPage.clickOnCompanies.get(0)).click();
-            if(branchesPage.threeDotsButton.isDisplayed()) break;
-        }
-
         tariffPage.tariffsBtn.click();
-        //System.out.println("2. user goes to tariff tab");
     }
 
     @Then("display all existing tariffs")
