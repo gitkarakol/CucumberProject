@@ -4,7 +4,6 @@ Feature: Tariff Tests
   Scenario: Create tariff
     Given user logs in to the website
     Then user goes to tariff tab
-    Then display all existing tariffs
     Then user clicks on create button
     And user fills all fields
     When user clicks on save tariff button

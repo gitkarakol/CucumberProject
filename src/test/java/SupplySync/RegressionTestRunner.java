@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "SupplySync.steps_definitions",
-        tags = "@CreateTariff or @EditTariff or @DeleteTariff",
-        plugin = {"html:target/cucumberTariffReport.html", "pretty", "json:target/cucumber-reports/Cucumber.json"}
+        tags = "@RegressionTest",
+        plugin = {"html:target/RegressionTestReport.html", "pretty", "json:target/cucumber-reports/RegressionTest.json"}
 )
-public class TariffTestRunner {
+public class RegressionTestRunner {
 }

@@ -7,7 +7,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utilities.Config;
 import utilities.Driver;
 import utilities.UtilWait;
 
@@ -15,17 +14,9 @@ import utilities.UtilWait;
 public class TariffSteps {
 
     WebDriver driver = Driver.getDriver();
-    LoginPage loginPage = new LoginPage(driver);
     TariffPage tariffPage = new TariffPage(driver);
 
-    @Given("user logs in to the website")
-    public void user_logs_in_to_the_website() {
-        driver.get(Config.getValue("url"));
-        loginPage.email.sendKeys(Config.getValue("email"));
-        loginPage.password.sendKeys(Config.getValue("password"));
-        loginPage.submit.click();
-        //System.out.println("1. user logs in to the website");
-    }
+
 
     @Then("user goes to tariff tab")
     public void user_goes_to_tariff_tab(){
@@ -34,7 +25,6 @@ public class TariffSteps {
 
     @Then("display all existing tariffs")
     public void display_all_existing_tariffs() {
-        //System.out.println("3. display all existing tariffs");
         for(WebElement element : tariffPage.expandRow){
             element.click();
         }
