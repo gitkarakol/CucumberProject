@@ -39,7 +39,7 @@ public class JuridicEntityPagee {
     @FindBy(xpath = "//input[@id='mui-2']")
     public WebElement legalEntityNameField ;
 
-    @FindBy(xpath = "//div[@class='sc-bhnkmi ikSqQs']/button[text()='Create']")
+    @FindBy(xpath = "//div[@class='sc-jnrVZQ ieeBTg']/button[text()='Create']")
     public WebElement createButton ;
 
     public void clickAJuridicEntityButton(){
