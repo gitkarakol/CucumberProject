@@ -46,18 +46,6 @@ public class CompaniesPage {
     @FindBy(css = "#root > div.sc-gKclnd.kTwmCH.SnackbarContainer-top.SnackbarContainer-right.SnackbarContainer-root > div > div > div > div > div > div > div")
     public WebElement confirmationMessage;
 
-//    public void clickEditButton() {
-//        editButton.click();
-//    }
-//    public void selectMenuOption() {
-//        menuOption.click();
-//    }
-
-//    public void clickEdit() {
-//        clickEdit.click();
-//    }
-
-
     public void fillCompanyDetails(String name, String email, String address, String phone) {
         clearWebField(nameField);
         nameField.sendKeys(name);
