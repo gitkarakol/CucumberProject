@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "SupplySync.steps_definitions",
-        tags = "@createNewBranch or @editBranch",
+        tags = "@createNewBranch or @editBranch or @negativeTestCase" ,
         plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json"},
         dryRun = false
 
