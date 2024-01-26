@@ -35,7 +35,7 @@ public class CompaniesSteps {
     @Then("the company should be successfully edited with a confirmation message")
     public void the_company_should_be_successfully_edited_with_a_confirmation_message() {
         companiesPage.fillCompanyDetails("Dasha's Company", "dashuha1405@gmail.com", "111 Wall Street", "1234567890");
-        companiesPage.replacePicture.sendKeys("file:///Users/enigma/Desktop/Automation/SuplySyncCucumber/src/test/resources/1660078396_5-kartinkin-net-p-kramatorsk-dostoprimechatelnosti-krasivo-f-5.jpg");
+        //companiesPage.replacePicture.sendKeys("file:///Users/enigma/Desktop/Automation/SuplySyncCucumber/src/test/resources/1660078396_5-kartinkin-net-p-kramatorsk-dostoprimechatelnosti-krasivo-f-5.jpg");
         companiesPage.saveButton.click();
         //String confirmationMessage = companiesPage.getConfirmationMessage();
         //Assert.assertEquals("Company successfully changed", confirmationMessage);
