@@ -41,7 +41,6 @@ public class MasterSteps {
         masterPage.password.sendKeys("anypassowrd");
         masterPage.branchDropDown.click();
         masterPage.option.click();
-
     }
 
     @When("user clicks on save Master button")
