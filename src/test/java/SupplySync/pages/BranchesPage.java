@@ -47,11 +47,11 @@ public class BranchesPage {
     @FindBy(xpath = "(//li[@data-value='[object Object]'])[7]")
     public WebElement clickOnCity; //esc button
 
-    @FindBy(id = "mui-component-select-company")
+    @FindBy(id = "mui-component-select-companyId")
     public WebElement selectCompanies;
 
-    @FindAll(@FindBy( xpath = "//li[text()='RunolfssonCodewise123']/.."))
-    public List<WebElement> clickOnCompanies;
+    @FindBy( xpath = "//li[@data-value='1']")
+    public WebElement clickOnCompanies;
 
     @FindBy(xpath = "//input[@name='shownToClients' and  @value='true']")
     public WebElement showBranchToCustomers;
@@ -71,6 +71,7 @@ public class BranchesPage {
 
     @FindBy(xpath = "(//li[@class='sc-ikJyIC idrUqC MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root sc-ZOtfp nBBxr sc-eVmaCL fxUfBO'])[1]")
     public  WebElement editButton;
+
 
     @FindBy(xpath = "//button[@form = 'edit-branch-form']")
     public WebElement saveButton;

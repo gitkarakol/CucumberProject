@@ -12,17 +12,14 @@ Feature:
 
 @editBranch
 Scenario: Edit branch
-  Given user logs in to the website
   And user make changes existing Master Branch
-  Then user clicks on save tariff button
   Then verify s the existing branch has been changes
 
   @negativeTestCase
-  Scenario: Invalid pone number in branch creation
-    Given user logs in to the website
-    Then user click on create branch button
+  Scenario: Invalid phone number in branch creation
+    Then user click on create branch button second time
     And user fill all field with valid info with instruction without phone number
-    When user enter uncorrect phono number
+    When user enter incorrect phone number
     Then ensure the phone number box change its color to red
 
 
