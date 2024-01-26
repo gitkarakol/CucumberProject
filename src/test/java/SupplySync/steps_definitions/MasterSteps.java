@@ -39,6 +39,8 @@ public class MasterSteps {
         masterPage.number.sendKeys("777771441");
         masterPage.location.sendKeys("Toronto");
         masterPage.password.sendKeys("anypassowrd");
+        masterPage.branchDropDown.click();
+        masterPage.option.click();
 
     }
 
