@@ -5,12 +5,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html: target/cucumberReport.html", "json:target/report.json"},
-        features ="src/test/resources/features",
-        glue ="SupplySync.step_definitions",
-        tags = "@createJuridicEntity",
-        dryRun = true
+        features = "src/test/resources/features",
+        glue = "SupplySync.steps_definitions",
+        tags = "@createAJuridicEntity",
+        plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json"},
+        dryRun = false
+
 )
+
 
 
 

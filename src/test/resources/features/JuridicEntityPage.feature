@@ -1,6 +1,6 @@
 Feature: verify as a user can create a legal entity
 
- @createJuridicEntity
+ @createAJuridicEntity
   Scenario: when user successfully log in to Supplysync,
   he should be able to create a legal entity
    Given user logs in to supplysync

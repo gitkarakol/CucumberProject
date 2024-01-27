@@ -16,6 +16,7 @@ public class JuridicEntityCreateSteps {
     JuridicEntityPagee juridicEntityPagee = new JuridicEntityPagee(driver);
 
 
+
     @Given("user logs in to supplysync")
     public void user_logs_in_to_supplysync() {
         driver.get(Config.getValue("url"));
@@ -26,17 +27,14 @@ public class JuridicEntityCreateSteps {
     @When("user goes to Juridic Entity page")
     public void user_goes_to_juridic_entity_page() {
         juridicEntityPagee.clickAJuridicEntityButton();
-
-
     }
-//    @When("user creates a legal entity")
-//    public void user_creates_a_legal_entity() {
-//      juridicEntityPagee.createLegalEntity();
-//
-//    }
+    @When("user creates a legal entity")
+    public void user_creates_a_legal_entity() throws InterruptedException {
+        juridicEntityPagee.createLegalEntity();
+        juridicEntityPagee.createLegalButton();
+    }
     @Then("verify the course is created")
     public void verify_the_course_is_created() {
         System.out.println("the course is successfully created");
-
     }
 }

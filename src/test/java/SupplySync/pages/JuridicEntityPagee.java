@@ -1,8 +1,13 @@
 package SupplySync.pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class JuridicEntityPagee {
     public WebDriver driver;
@@ -43,19 +48,33 @@ public class JuridicEntityPagee {
     public WebElement createButton ;
 
     public void clickAJuridicEntityButton(){
-        branches.click();
-        chooseCompanyFromBranches.click();
-        dropdownBranches.click();
+//        branches.click();
+//        chooseCompanyFromBranches.click();
+//        dropdownBranches.click();
         juridicEntity.click();
+
+
+    }
+    public  void createLegalEntity() throws InterruptedException {
         createLegalEntityButton.click();
         companiesField.click();
         chooseCompany.click();
         branchField.click();
+        Thread.sleep(5000);
         chooseBranch.click();
         legalEntityNameField.click();
         legalEntityNameField.sendKeys("Absd");
-        createButton.click();
+        // createButton.click();
 
     }
+    public void createLegalButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath
+                ("//div[@class='sc-ksdxgE gVZjGP']//button[text()='Create']")));
+
+        element.click();
+    }
+
+
 
 }
